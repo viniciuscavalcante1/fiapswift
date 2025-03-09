@@ -1,10 +1,10 @@
 import UIKit
 
-// If - else - else if
+// Conditional statements: if, else, and else if
 
 let number = 11
 
-// Simple if
+// Simple if-else statement
 if number % 2 == 0 {
     print("Even Number")
 } else {
@@ -15,7 +15,7 @@ if number % 2 == 0 {
 var temperature = 18
 var climate = ""
 
-// Else If
+// Multiple conditions using else-if structure
 if temperature <= 0 {
     climate = "Very Cold"
 } else if temperature < 14 {
@@ -25,5 +25,5 @@ if temperature <= 0 {
 } else if temperature < 30 {
     climate = "Hot"
 } else {
-    climate = "Very hot"
+    climate = "Very Hot"
 }
