@@ -159,7 +159,7 @@ let numbers = 1...10
 print(numbers) // 1...10
 
 for number in numbers {
-    print(number) // print from 1 to 10
+    print(number) // prints numbers from 1 to 10 (inclusive)
 }
 
 let newNumbers = 1..<10
