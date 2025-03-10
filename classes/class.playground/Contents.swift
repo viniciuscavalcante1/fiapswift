@@ -10,6 +10,38 @@ class Person {
     var age: Int = 0          // Optional property with default value
     var married: Bool = false // Optional property with default value
     
+    // Commented-out example of a read-only computed property
+    
+    /*var maritalStatus: String {
+        if married {
+            return "married"
+        } else {
+            return "single"
+        }
+    }*/
+    
+    // Computed property with both getter and setter methods
+    // The getter calculates and returns a value based on other properties
+    // The setter allows us to modify the underlying property (married) when this property is assigned a new value
+    // Swift automatically provides a constant named 'newValue' that represents the value being assigned
+    var maritalStatus: String {
+        get {
+            if married {
+                return "married"
+            } else {
+                return "single"
+            }
+        }
+        
+        set {
+            if newValue == "married" {
+                married = true
+            } else {
+                married = false
+            }
+        }
+    }
+    
     // Initializer method that sets up a new Person instance
     init(aName: String, isMarried: Bool) {
         name = aName
@@ -36,3 +68,10 @@ let jobs = Person(aName: "Steve Jobs", isMarried: true)
 
 // Modifying a property after initialization
 jobs.age = 39
+
+// Creating another Person instance
+let onePerson = Person(aName: "Paulo", isMarried: false)
+
+// Using the setter of the computed property to change the underlying 'married' property
+onePerson.maritalStatus = "married"
+print(onePerson.married, onePerson.maritalStatus) // Will print: true married
