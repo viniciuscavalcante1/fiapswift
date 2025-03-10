@@ -1,0 +1,38 @@
+import UIKit
+
+// In Swift, classes require initializers (constructor methods) to ensure all properties have values before an instance is created
+// Unlike regular methods, initializers use the 'init' keyword instead of 'func' and don't specify a return type
+// It's common practice to use parameter names that differ from property names to avoid naming conflicts
+
+class Person {
+    // Properties that define characteristics of a Person
+    var name: String          // Must be initialized in constructor since no default value is provided
+    var age: Int = 0          // Optional property with default value
+    var married: Bool = false // Optional property with default value
+    
+    // Initializer method that sets up a new Person instance
+    init(aName: String, isMarried: Bool) {
+        name = aName
+        married = isMarried
+        // Note: 'age' doesn't need to be initialized here since it has a default value
+    }
+    
+    // Instance methods that define behaviors of a Person
+    func speak(sentence: String) {
+        if age < 3 {
+            print("\(name) babbling: \(sentence)") // Young children babble instead of speaking clearly
+        } else {
+            print("\(name): \(sentence)")
+        }
+    }
+    
+    func introduce() -> String {
+        return "Hello, my name is \(name)."
+    }
+}
+
+// Creating a new Person instance with specified name and marital status
+let jobs = Person(aName: "Steve Jobs", isMarried: true)
+
+// Modifying a property after initialization
+jobs.age = 39
