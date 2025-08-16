@@ -42,6 +42,14 @@ class Person {
         }
     }
     
+    // Static class property
+    static let animalClass: String = "Mammal"
+    
+    // Class method
+    class func getInfo() -> String {
+        return "This is a class method. Class methods always starts with class before func definition. By the way, I'm a \(Person.animalClass), and I have a name, a marital status and age."
+    }
+    
     // Initializer method that sets up a new Person instance
     init(aName: String, isMarried: Bool) {
         name = aName
@@ -75,3 +83,7 @@ let onePerson = Person(aName: "Paulo", isMarried: false)
 // Using the setter of the computed property to change the underlying 'married' property
 onePerson.maritalStatus = "married"
 print(onePerson.married, onePerson.maritalStatus) // Will print: true married
+
+// Using class properties and class methods
+print(Person.getInfo())
+print(Person.animalClass)
