@@ -71,6 +71,22 @@ class Person {
     }
 }
 
+// Inheritance
+
+// Here, we stand the inheritance by treating it like it's some kind of type attribution.
+class Student: Person {
+    var rm: String
+    
+    // We are likely to implement a new property called rm, so, we also need to build a new constructor method, with all the
+    // super class required properties (aName, isMarried) and also the new property.
+    init(aName: String, isMarried: Bool, aRM: String) {
+        rm = aRM
+        
+        // Firstly, we introduce the new property, then, we can start the super properties with super constructor method (super.init)
+        super.init(aName: aName, isMarried: isMarried)
+    }
+}
+
 // Creating a new Person instance with specified name and marital status
 let jobs = Person(aName: "Steve Jobs", isMarried: true)
 
@@ -87,3 +103,8 @@ print(onePerson.married, onePerson.maritalStatus) // Will print: true married
 // Using class properties and class methods
 print(Person.getInfo())
 print(Person.animalClass)
+
+// Using inheritance. student is both a Student and a Person!
+let student = Student(aName: "João", isMarried: false, aRM: "123456789")
+print(student.rm)
+
