@@ -85,6 +85,11 @@ class Student: Person {
         // Firstly, we introduce the new property, then, we can start the super properties with super constructor method (super.init)
         super.init(aName: aName, isMarried: isMarried)
     }
+    
+    // We can override super properties and methods with override reserved word before func, and we can also use the super method as well.
+    override func introduce() -> String {
+        return "\(super.introduce()) and my rm is \(rm)"
+    }
 }
 
 // Creating a new Person instance with specified name and marital status
@@ -108,3 +113,5 @@ print(Person.animalClass)
 let student = Student(aName: "João", isMarried: false, aRM: "123456789")
 print(student.rm)
 
+// Using overrided method
+print(student.introduce())
