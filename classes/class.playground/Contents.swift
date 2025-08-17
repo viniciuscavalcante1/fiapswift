@@ -115,3 +115,36 @@ print(student.rm)
 
 // Using overrided method
 print(student.introduce())
+
+
+// Extension. We can extend existing classes and structs capabilities with extension. Even String class.
+
+import Foundation
+
+let name = "Steve Jobs"
+
+extension String {
+    var initials: String {
+        let words = self.components(separatedBy: " ")
+        let firstLetters = words.map({String($0.first!)})
+        return firstLetters.joined()
+    }
+    
+    func getVowelsCount() -> Int {
+        var total: Int = 0
+        let characterArray = Array(self)
+        for letter in characterArray {
+            let lowerLetter = String(letter).lowercased()
+            switch lowerLetter {
+            case "a", "e", "i", "o", "u":
+                total += 1
+            default:
+                break
+            }
+        }
+        return total
+    }
+}
+
+print(name.initials)
+print(name.getVowelsCount())
